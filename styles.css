@@ -1,0 +1,51 @@
+* {
+}
+
+.wrapper {
+    position: absolute;
+    right: 35%;
+    left: 35%;
+    top: 10%;
+    padding: 10px;
+    max-width: 30em;
+    display: inline-block;
+    text-align: center;
+}
+#header {
+    margin-bottom: 70px;
+}
+
+.input-div {
+    display: inline-block;
+    background-color: lightgreen;
+    width: 100%;
+}
+
+#prompt {
+    padding-bottom: 16px;
+    padding-top: 16px;
+    font-size: 2em;
+}
+
+#number {
+    margin-bottom: 16px;
+    margin-top: 16px;
+    width: 80%;
+    background-color: black;
+    color: white;
+    font-size: 3em;
+    border: none;
+
+}
+
+#check-btn {
+    margin-top: 16px;
+    margin-bottom: 30px;
+    width: 80%;
+    height: 3em;
+    background-color: orange;
+    border: none;
+
+}
+
+
