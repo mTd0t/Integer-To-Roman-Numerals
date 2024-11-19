@@ -1,26 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link href="styles.css" rel="stylesheet">
-    <meta content="1" http-equiv="refresh">
+    <meta http-equiv="refresh" content="">
     <meta charset="UTF-8">
-    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-          name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Document</title>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-<main>
-    <div class="wrapper">
-        <div id="header"><h1>INTEGER TO ROMAN NUMERALS</h1></div>
-        <div class="input-div">
-            <div id="prompt" class="input-div"><label for="number">Enter number to convert (up to 3999)</label></div>
-            <div id="input-box" class="input-div"><input id="number" name="number" type="number"></div>
-            <div class="input-div"><button id="check-btn">CONVERT</button></div>
-        </div>
-        <div id="output"></div>
+<div class="ellapot">
+    <div>
+        <h1 id="header">Integer to Roman Numerals</h1>
     </div>
-</main>
+    <div class="form-div">
+        <div id="label-div">
+            <label for="number-input">Enter a number(up to 3999)</label>
+        </div>
+        <div id="input-div">
+            <input id="number-input" name="number-input" type="number" value=""><br>
+            <button id="convert-btn">Convert</button>
+        </div>
+        <div id="result"></div>
+    </div>
+
+</div>
 <script src="app.js"></script>
 </body>
 </html>
