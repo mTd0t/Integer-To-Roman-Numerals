@@ -16,19 +16,18 @@ function convertToRoman(num) {
     }, {value: 4, symbol: "IV"}, {value: 1, symbol: "I"},]
 
 
-    let result = [];
+    let result = '';
 
     if(userInput.value === '' || userInput.value < 0 || userInput.value > 3999) {
         alert('Please enter a valid number!');
     }
 
+    let numberInput = userInput.value;
     for (let i = 0; i < romanNumerals.length; i++) {
-        while (userInput.value >= romanNumerals[i].value) {
-        }
-        result[i] += romanNumerals[i].symbol;
-        userInput.value -= romanNumerals[i].value;
+        while (numberInput >= romanNumerals[i].value) {
+            result += romanNumerals[i].symbol;
+            numberInput -= romanNumerals[i].value;}
     }
-    result.join('');
     resultDiv.replaceChildren(result);
 }
 
