@@ -1,4 +1,4 @@
-const userInput = document.getElementById('number-input');
+const userInput = document.getElementById('number');
 const convertButton = document.getElementById('convert-btn');
 const resultDiv = document.getElementById('result');
 
@@ -6,7 +6,7 @@ const resultDiv = document.getElementById('result');
 convertButton.addEventListener('click', convertToRoman);
 
 
-function convertToRoman(num) {
+function convertToRoman() {
     const romanNumerals = [{value: 1000, symbol: "M"}, {value: 900, symbol: "CM"}, {
         value: 500, symbol: "D"
     }, {value: 400, symbol: "CD"}, {value: 100, symbol: "C"}, {value: 90, symbol: "XC"}, {
@@ -18,8 +18,12 @@ function convertToRoman(num) {
 
     let result = '';
 
-    if(userInput.value === '' || userInput.value < 0 || userInput.value > 3999) {
-        alert('Please enter a valid number!');
+    if(userInput.value === '') {
+        alert('Please enter a valid number');
+    }else if(userInput.value < 0){
+        alert('Please enter a number greater than or equal to 1');
+    }else if(userInput.value > 3999){
+        alert('Please enter a number less than or equal to 3999');
     }
 
     let numberInput = userInput.value;
