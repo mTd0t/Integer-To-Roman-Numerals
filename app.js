@@ -1,10 +1,8 @@
 const userInput = document.getElementById('number');
 const convertButton = document.getElementById('convert-btn');
-const resultDiv = document.getElementById('result');
-
+const resultDiv = document.getElementById('output');
 
 convertButton.addEventListener('click', convertToRoman);
-
 
 function convertToRoman() {
     const romanNumerals = [{value: 1000, symbol: "M"}, {value: 900, symbol: "CM"}, {
@@ -15,24 +13,23 @@ function convertToRoman() {
         value: 5, symbol: "V"
     }, {value: 4, symbol: "IV"}, {value: 1, symbol: "I"},]
 
-
     let result = '';
+    const number = parseInt(userInput.value);
 
-    if(userInput.value === '') {
-        alert('Please enter a valid number');
-    }else if(userInput.value < 0){
-        alert('Please enter a number greater than or equal to 1');
-    }else if(userInput.value > 3999){
-        alert('Please enter a number less than or equal to 3999');
+    if (isNaN(number)) {
+        resultDiv.replaceChildren('Please enter a valid number');
+    } else if (number <= 0) {
+        resultDiv.replaceChildren('Please enter a number greater than or equal to 1');
+    } else if (number > 3999) {
+        resultDiv.replaceChildren('Please enter a number less than or equal to 3999');
+    } else {
+        let numberInput = number;
+        for (let i = 0; i < romanNumerals.length; i++) {
+            while (numberInput >= romanNumerals[i].value) {
+                result += romanNumerals[i].symbol;
+                numberInput -= romanNumerals[i].value;
+            }
+        }
+        resultDiv.replaceChildren(result);
     }
-
-    let numberInput = userInput.value;
-    for (let i = 0; i < romanNumerals.length; i++) {
-        while (numberInput >= romanNumerals[i].value) {
-            result += romanNumerals[i].symbol;
-            numberInput -= romanNumerals[i].value;}
-    }
-    resultDiv.replaceChildren(result);
 }
-
-
